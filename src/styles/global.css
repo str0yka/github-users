@@ -1,0 +1,19 @@
+body {
+    --primaryColor: #FFFFFF;
+    --secondaryColor: #2E2E2E;
+    --secondaryColorLight: #464646;
+    --secondaryColorDark: #0E0E0E;
+    --accentGradientColor: linear-gradient(90deg, #599CFF 0%, #CC79FF 100%);
+
+    background-color: var(--secondaryColorDark);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: 'Poppins', 'Arial', sans-serif;
+    color: var(--primaryColor);
+}
