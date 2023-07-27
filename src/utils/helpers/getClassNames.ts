@@ -1,6 +1,6 @@
 type getClassNamesProps = Array<
   | {
-      [key: string]: boolean | null | undefined;
+      [key: string]: boolean;
     }
   | string
   | undefined
@@ -14,7 +14,7 @@ export const getClassNames = (...classNames: getClassNamesProps) => {
 
     if (typeof currentClassName === "object") {
       for (let className in currentClassName) {
-        !!currentClassName[className] && result.push(className);
+        currentClassName[className] && result.push(className);
       }
     }
 
