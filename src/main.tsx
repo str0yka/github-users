@@ -6,6 +6,7 @@ import Users from "@/pages/Users/Users.tsx";
 
 import "@/styles/global.css";
 import "@/styles/zero.css";
+import Header from "@components/Header/Header.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <Users />,
+    element: (
+      <>
+        <Header />
+        <Users />
+      </>
+    ),
   },
   {
     path: "/user/:id",
