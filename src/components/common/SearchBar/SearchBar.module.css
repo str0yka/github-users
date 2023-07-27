@@ -1,0 +1,38 @@
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px;
+
+    border-radius: 10px;
+    border: 1px var(--secondaryColor) solid;
+
+    font-size: 16px;
+
+    cursor: text;
+}
+
+.bar:focus-within {
+    border: 1px var(--secondaryColorLight) solid;
+}
+
+.bar:focus-within > .link svg {
+    fill: var(--secondaryColorLight);
+}
+
+.input {
+    width: 100%;
+
+    font-size: 16px;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--secondaryColor);
+}

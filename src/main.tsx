@@ -1,6 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "@/App.tsx";
+
+import Home from "@/pages/Home/Home.tsx";
+import Users from "@/pages/Users/Users.tsx";
 
 import "@/styles/global.css";
 import "@/styles/zero.css";
@@ -8,10 +10,11 @@ import "@/styles/zero.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
-    path: "/users/:query",
+    path: "/users",
+    element: <Users />,
   },
   {
     path: "/user/:id",

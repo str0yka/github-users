@@ -21,3 +21,10 @@ input, textarea, select {
     font-family:inherit;
 }
 
+input {
+    background: none;
+    border: none;
+    outline: none;
+    color: inherit;
+}
+
