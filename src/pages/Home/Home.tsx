@@ -4,9 +4,12 @@ import s from "./Home.module.css";
 
 const Home = () => {
   return (
-    <section>
+    <main className={s.page}>
+      <h1 className={s.title}>
+        Find most active <span className={s.textGradient}>GitHub</span> user
+      </h1>
       <SearchBar onSearch={() => {}} className={s.searchBar} />
-    </section>
+    </main>
   );
 };
 

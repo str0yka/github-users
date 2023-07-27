@@ -15,8 +15,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
   className,
   ...inputProps
 }) => {
-  console.log(className, typeof className === "string");
-
   const searchBarClassNames = getClassNames(s.bar, className);
 
   return (

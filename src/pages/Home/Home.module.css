@@ -1,0 +1,27 @@
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+    height: 100vh;
+}
+
+.title {
+    font-size: 48px;
+}
+
+.textGradient {
+    background: var(--accentGradientColor);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-weight: 700;
+}
+
+.searchBar {
+    max-width: 770px;
+    width: 100%;
+}
