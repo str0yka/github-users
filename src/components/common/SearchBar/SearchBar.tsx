@@ -1,17 +1,27 @@
 import React, { ComponentProps } from "react";
 
 import VisuallyHidden from "@components/common/VisuallyHidden/VisuallyHidden.tsx";
+import { getClassNames } from "@/utils";
 
 import s from "./SearchBar.module.css";
 
 interface SearchBarProps extends ComponentProps<"input"> {
   onSearch: () => void;
+  className?: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch, ...inputProps }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  onSearch,
+  className,
+  ...inputProps
+}) => {
+  console.log(className, typeof className === "string");
+
+  const searchBarClassNames = getClassNames(s.bar, className);
+
   return (
     <label
-      className={s.bar}
+      className={searchBarClassNames}
       onKeyDown={(event) => event.key === "Enter" && onSearch()}
     >
       <input
