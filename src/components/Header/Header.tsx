@@ -1,18 +1,17 @@
 import { Link, useSearchParams } from "react-router-dom";
 
+import Container from "@components/common/Container/Container.tsx";
 import SearchBar from "@components/SearchBar/SearchBar.tsx";
 import { useDebounce } from "@/hooks";
 
-import Container from "@components/common/Container/Container.tsx";
-
 import s from "./Header.module.css";
+import { getSearchParams } from "@/utils/helpers/getSearchParams.ts";
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const onDebouncedSearch = useDebounce(
-    (query: string) => setSearchParams({ query }, { replace: true }),
-    500
-  );
+  const onDebouncedSearch = useDebounce((q: string) => {
+    setSearchParams(getSearchParams({ q }), { replace: true });
+  }, 500);
 
   return (
     <header className={s.header}>
@@ -22,9 +21,9 @@ const Header = () => {
         </Link>
         <SearchBar
           className={s.searchBar}
-          initialValue={searchParams.get("query") || ""}
-          onSearch={onDebouncedSearch}
-          searchWhenType={true}
+          initialValue={searchParams.get("q") || ""}
+          whileTyping={onDebouncedSearch}
+          navigateTo={(query) => "/users?q=" + query}
         />
       </Container>
     </header>

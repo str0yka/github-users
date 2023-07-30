@@ -1,0 +1,29 @@
+.card {
+    display: grid;
+    grid-template-columns: 110px auto;
+    grid-auto-rows: 110px;
+    gap: 20px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+    border: 1px var(--secondaryColor) solid;
+}
+
+.cardInfo {
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondaryColorLight);
+}

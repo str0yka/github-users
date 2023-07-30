@@ -1,0 +1,11 @@
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--secondaryColor);
+}

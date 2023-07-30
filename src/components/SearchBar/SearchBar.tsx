@@ -1,4 +1,5 @@
 import React, { ChangeEvent, ComponentProps, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import VisuallyHidden from "@components/common/VisuallyHidden/VisuallyHidden.tsx";
 import { getClassNames } from "@/utils";
@@ -7,23 +8,25 @@ import s from "./SearchBar.module.css";
 
 interface SearchBarProps extends ComponentProps<"input"> {
   initialValue: string;
-  onSearch: (query: string) => void;
-  searchWhenType: boolean;
+  whileTyping?: (query: string) => void;
+  navigateTo: (query: string) => string;
   className?: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   initialValue,
-  onSearch,
-  searchWhenType,
+  whileTyping,
+  navigateTo,
   className,
   ...inputProps
 }) => {
   const [query, setQuery] = useState(initialValue);
+  const navigate = useNavigate();
+  const searchLink = navigateTo(query);
 
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
-    searchWhenType && onSearch(event.target.value);
+    whileTyping && whileTyping(event.target.value);
   };
 
   const searchBarClassNames = getClassNames(s.bar, className);
@@ -31,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <label
       className={searchBarClassNames}
-      onKeyDown={(event) => event.key === "Enter" && onSearch(query)}
+      onKeyDown={(event) => event.key === "Enter" && navigate(searchLink)}
     >
       <input
         {...inputProps}
@@ -41,7 +44,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         type="text"
         placeholder="Search..."
       />
-      <button className={s.link} onClick={() => onSearch(query)}>
+      <button className={s.link} onClick={() => navigate(searchLink)}>
         <svg
           version="1.1"
           id="Capa_1"

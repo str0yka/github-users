@@ -3,6 +3,9 @@ body {
     --secondaryColor: #2E2E2E;
     --secondaryColorLight: #464646;
     --secondaryColorDark: #0E0E0E;
+    --secondaryColorDarken: #0F0F0F;
+    --secondaryColorSkeleton: rgba(14, 14, 14, 0.35);
+    --secondaryColorSkeletonTransparent: rgba(25,25,25, 0.25);
     --accentGradientColor: linear-gradient(90deg, #599CFF 0%, #CC79FF 100%);
 
     background-color: var(--secondaryColorDark);
@@ -16,4 +19,15 @@ body {
 
     font-family: 'Poppins', 'Arial', sans-serif;
     color: var(--primaryColor);
+}
+
+#root {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#root main {
+    flex-grow: 1;
 }
