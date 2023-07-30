@@ -40,11 +40,9 @@ const Users = () => {
     }
   });
 
-  const onChangeOrder = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const onChangeOrder = (order: string) => {
     // @ts-ignore
-    setOrder(event.target.name);
+    setOrder(order);
   };
 
   useEffect(() => {
@@ -77,8 +75,7 @@ const Users = () => {
                 className={getClassNames(s.sortButton, {
                   [s.active]: order === "asc",
                 })}
-                name="asc"
-                onClick={onChangeOrder}
+                onClick={() => onChangeOrder("asc")}
               >
                 ascending
               </button>
@@ -86,8 +83,7 @@ const Users = () => {
                 className={getClassNames(s.sortButton, {
                   [s.active]: order === "desc",
                 })}
-                name="desc"
-                onClick={onChangeOrder}
+                onClick={() => onChangeOrder("desc")}
               >
                 descending
               </button>
