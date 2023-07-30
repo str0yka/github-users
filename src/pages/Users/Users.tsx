@@ -41,7 +41,6 @@ const Users = () => {
   });
 
   const onChangeOrder = (order: string) => {
-    // @ts-ignore
     setOrder(order);
   };
 
