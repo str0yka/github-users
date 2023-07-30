@@ -10,10 +10,6 @@ export class UserApi {
       params,
     });
 
-    if (response.status === 403) {
-      throw new Error("To many requests");
-    }
-
     if ("errors" in response.data) {
       throw new Error("Unexpected error");
     }

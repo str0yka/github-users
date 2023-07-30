@@ -1,18 +1,19 @@
-import s from "./Avatar.module.css";
 import React from "react";
+
+import s from "./Avatar.module.css";
 
 interface AvatarProps {
   src?: string;
-  alt: string;
+  login: string;
 }
 
 const Avatar: React.FC<AvatarProps> = ({
   src = "./images/icons/avatar.svg",
-  alt,
+  login,
 }) => {
   return (
     <div className={s.avatar}>
-      <img className={s.avatarImage} src={src} alt={alt} />
+      <img className={s.avatarImage} src={src} alt={`${login} avatar`} />
     </div>
   );
 };

@@ -22,11 +22,8 @@ const Pagination: React.FC<PaginationProps> = ({
   let firstButtonValue = current - Math.floor(buttonQuantity / 2);
   let lastButtonValue = current + Math.floor(buttonQuantity / 2);
 
-  if (firstButtonValue <= 0) {
-    firstButtonValue = 1;
-  }
-
   if (lastButtonValue < buttonQuantity) {
+    firstButtonValue = 1;
     lastButtonValue = buttonQuantity;
   }
 

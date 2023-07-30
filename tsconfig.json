@@ -22,7 +22,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"]
-    }
+    },
+
+    "types": ["vitest/globals"]
   },
   "include": ["src", "src/index.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

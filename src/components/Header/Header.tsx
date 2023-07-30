@@ -3,9 +3,9 @@ import { Link, useSearchParams } from "react-router-dom";
 import Container from "@components/common/Container/Container.tsx";
 import SearchBar from "@components/SearchBar/SearchBar.tsx";
 import { useDebounce } from "@/hooks";
+import { getSearchParams } from "@/utils/helpers/getSearchParams.ts";
 
 import s from "./Header.module.css";
-import { getSearchParams } from "@/utils/helpers/getSearchParams.ts";
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Container from "@components/common/Container/Container.tsx";
 import ErrorPage from "@/pages/Error/Error.tsx";
 import Loading from "@components/common/Loading/Loading.tsx";
+import Avatar from "@components/common/Avatar/Avatar.tsx";
 import { useFetch } from "@/hooks";
 import { UserApi } from "@/http";
 
@@ -37,11 +38,7 @@ const User = () => {
         Go back
       </button>
       <div className={s.user}>
-        <img
-          className={s.userAvatar}
-          src={user.avatar_url}
-          alt={"avatar of " + user.login}
-        />
+        <Avatar src={user.avatar_url} login={user.login} />
         <div className={s.userInfoBlock}>
           <div className={s.userName}>
             <h1 className={s.login}>{user.login}</h1>

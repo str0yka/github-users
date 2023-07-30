@@ -1,8 +1,9 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 import Avatar from "@components/common/Avatar/Avatar.tsx";
 
 import s from "./UserCard.module.css";
-import React from "react";
-import { Link } from "react-router-dom";
 
 type UserCardProps = Pick<
   ResponseUserFromList,
@@ -13,7 +14,7 @@ const UserCard: React.FC<UserCardProps> = ({ login, avatar_url, type }) => {
   return (
     <article className={s.card}>
       <Link to={"/user/" + login}>
-        <Avatar src={avatar_url} alt={`${login} avatar`} />
+        <Avatar src={avatar_url} login={login} />
       </Link>
       <div className={s.cardInfo}>
         <h2 className={s.title}>
