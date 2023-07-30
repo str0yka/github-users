@@ -43,6 +43,7 @@ const Users = () => {
   const onChangeOrder = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
+    // @ts-ignore
     setOrder(event.target.name);
   };
 
